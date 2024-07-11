@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import NavBar from './components/NavBar';
+import Converter from './components/Converter';
 
 function App() {
     return (
         <div className="App">
-            <h1>Hello, Azaman User!</h1>
+            <NavBar />
+            <Converter />
         </div>
     );
 }
