@@ -1,20 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-function Converter() {
+function Converter(props) {
+    const {
+        currencies,
+        selectedCurrency,
+        onCurrencyChange
+    } = props;
+
     return (
         <div>
             <h1>Currency Converter</h1>
             <div>
                 <input type="number" />
-                <select>
-                    <option value="CURR">USD</option>
+                <select value={selectedCurrency} onChange={onCurrencyChange}>
+                    {currencies.map((currency, index) => (
+                        <option key={index} value={currency}>{currency}</option>
+                    ))}
                 </select>
                 <h3>={'>'}</h3>
-                <input type="number" />
-                <select>
-                    <option value="CURR">USD</option>
-                </select>
-                <button>Convert</button>
             </div>
         </div>
     );

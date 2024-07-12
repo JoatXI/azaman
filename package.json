@@ -1,7 +1,7 @@
 {
 	"name": "azaman",
 	"version": "1.0.0",
-    "main": "index.js",
+	"main": "index.js",
 	"scripts": {
 		"build": "npx webpack"
 	},
@@ -15,6 +15,8 @@
 		"webpack-cli": "^5.1.4"
 	},
 	"dependencies": {
+		"axios": "^1.7.2",
+		"dotenv": "^16.4.5",
 		"express": "^4.19.2",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
