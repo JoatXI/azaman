@@ -17,8 +17,18 @@ app.get('/api', async (req, res) => {
 			`https://api.getgeoapi.com/v2/currency/convert?api_key=${process.env.REACT_APP_API_KEY}`
 		);
 		res.json(currencyList.data);
-		console.log(currencyList);
-		console.log('DATA::', currencyList.data);
+	} catch (error) {
+		console.error(error);
+	}
+});
+
+app.get('/convert/:currency/:exchange/:amount', async (req, res) => {
+	try {
+		const convert = await axios.get(
+			`https://api.getgeoapi.com/v2/currency/convert?api_key=${process.env.REACT_APP_API_KEY}&from=${req.params.currency}&to=${req.params.exchange}&amount=${req.params.amount}`
+		);
+		res.json(convert.data);
+		console.log(convert);
 	} catch (error) {
 		console.error(error);
 	}

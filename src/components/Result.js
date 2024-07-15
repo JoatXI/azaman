@@ -4,18 +4,19 @@ function Result(props) {
     const {
         currencies,
         selectedCurrency,
-        onCurrencyChange
+        onCurrencyChange,
+        onAmountChange,
+        amount
     } = props;
     
     return (
         <div>
-            <input type="number" />
+            <input type="number" value={amount} onChange={onAmountChange} />
             <select value={selectedCurrency} onChange={onCurrencyChange}>
                 {currencies.map((currency, index) => (
                     <option key={index} value={currency}>{currency}</option>
                 ))}
             </select>
-            <button>Convert</button>
         </div>
       )
 }
